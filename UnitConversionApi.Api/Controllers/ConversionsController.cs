@@ -9,7 +9,6 @@ namespace UnitConversionApi.Api.Controllers;
 public class ConversionsController(IConversionService conversionService) : ControllerBase
 {
     // GET /api/conversions?value=100&fromUnit=C&toUnit=F
-   
     [HttpGet]
     [ProducesResponseType<ConversionResponse>(StatusCodes.Status200OK)]
     [ProducesResponseType<ProblemDetails>(StatusCodes.Status400BadRequest)]

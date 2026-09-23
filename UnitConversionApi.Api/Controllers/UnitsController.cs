@@ -10,7 +10,6 @@ namespace UnitConversionApi.Api.Controllers;
 public class UnitsController(IUnitRegistry unitRegistry) : ControllerBase
 {
     // GET /api/units or /api/units?category=Length
-
     [HttpGet]
     [ProducesResponseType<IEnumerable<UnitResponse>>(StatusCodes.Status200OK)]
     [ProducesResponseType<ValidationProblemDetails>(StatusCodes.Status400BadRequest)]

@@ -35,7 +35,6 @@ public sealed class ConversionService(IUnitRegistry unitRegistry) : IConversionS
             baseValue = SnapToZero(baseValue);
         }
 
-      
         if (from.Category == UnitCategory.Temperature && baseValue < 0)
         {
             throw new InvalidValueException($"{value} {from.Code} is below absolute zero.");
