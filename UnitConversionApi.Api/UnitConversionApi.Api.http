@@ -1,6 +1,37 @@
-@UnitConversionApi.Api_HostAddress = http://localhost:5118
+﻿@HostAddress = http://localhost:5118
 
-GET {{UnitConversionApi.Api_HostAddress}}/weatherforecast/
+### Celsius to Fahrenheit
+GET {{HostAddress}}/api/conversions?value=100&fromUnit=C&toUnit=F
 Accept: application/json
 
-###
+### Miles to kilometres
+GET {{HostAddress}}/api/conversions?value=26.2&fromUnit=mi&toUnit=km
+Accept: application/json
+
+### Stone to pounds
+GET {{HostAddress}}/api/conversions?value=11&fromUnit=st&toUnit=lb
+Accept: application/json
+
+### Unknown unit (400)
+GET {{HostAddress}}/api/conversions?value=1&fromUnit=xyz&toUnit=m
+Accept: application/json
+
+### Different categories (400)
+GET {{HostAddress}}/api/conversions?value=1&fromUnit=m&toUnit=kg
+Accept: application/json
+
+### Missing value (400)
+GET {{HostAddress}}/api/conversions?fromUnit=m&toUnit=ft
+Accept: application/json
+
+### Below absolute zero (400)
+GET {{HostAddress}}/api/conversions?value=-300&fromUnit=C&toUnit=K
+Accept: application/json
+
+### All units
+GET {{HostAddress}}/api/units
+Accept: application/json
+
+### Temperature units only
+GET {{HostAddress}}/api/units?category=Temperature
+Accept: application/json

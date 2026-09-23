@@ -8,7 +8,6 @@ namespace UnitConversionApi.Application.Services;
 
 public sealed class ConversionService(IUnitRegistry unitRegistry) : IConversionService
 {
-    // Enough precision for real measurements, and hides noise like 211.99999999999997.
     private const int SignificantFigures = 12;
 
     // Anything smaller than this is floating point noise and is treated as zero.
