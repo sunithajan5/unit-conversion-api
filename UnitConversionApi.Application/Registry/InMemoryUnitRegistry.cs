@@ -17,6 +17,7 @@ public sealed class InMemoryUnitRegistry : IUnitRegistry
 
         _allUnits = units.AsReadOnly();
 
+        // Throws on a duplicate code, so a copy/paste mistake fails at startup. Ordinal keeps codes case sensitive.
         _unitsByCode = units.ToDictionary(u => u.Code, StringComparer.Ordinal);
     }
 
